@@ -1,0 +1,103 @@
+@import "../../../static/css/function";
+@import "../../../static/css/variables";
+
+/* Work */
+.Work {
+  margin-top: 263px;
+  .section-title {
+    margin-bottom: 73px;
+  }
+  &_list {
+    display: block;
+    margin-bottom: 238px;
+    text-decoration: none;
+    &_title {
+      color: $black;
+      font-size: 28px;
+      line-height: 117.4%;
+      margin-top: 32px;
+    }
+    &_description {
+      color: $descriptionText;
+      font-family: "Circe Light", sans-serif;
+      font-weight: 300;
+      font-size: 22px;
+      line-height: 117.4%;
+      margin-top: 11px;
+      opacity: 0;
+      transition: opacity ease-out 0.4s;
+    }
+    @include respond-above(sm) {
+      margin-bottom: 60px;
+    }
+  }
+  .media-container {
+    position: relative;
+    overflow: hidden;
+    .open-case {
+      align-items: center;
+      background: $blue;
+      border-radius: 50%;
+      color: $white;
+      display: flex;
+      font-family: "Circle Light", sans-serif;
+      font-size: 18px;
+      line-height: 100.9%;
+      height: 91px;
+      justify-content: center;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      opacity: 0;
+      transform: translate(-50%, -50%);
+      transition: opacity ease 500ms;
+      width: 91px;
+      z-index: 99;
+    }
+    &:hover {
+      .open-case {
+        opacity: 1;
+        transition: opacity ease 500ms;
+      }
+    }
+  }
+  @include respond-above(sm) {
+    margin-top: 100px;
+  }
+  .see_more {
+    display: inline-block;
+    font-family: "Circe", sans-serif;
+    font-size: 28px;
+    line-height: 117.4%;
+    color: $descriptionText;
+    opacity: 0.5;
+    margin-bottom: 187px;
+    text-decoration: none;
+    position: relative;
+    transition: all ease 500ms;
+    &:after {
+      content: "";
+      border: 1px solid $descriptionText;
+      position: absolute;
+      bottom: -8px;
+      left: 0;
+      transition: all ease 500ms;
+      width: 100%;
+      opacity: 0.5;
+    }
+    &:hover {
+      opacity: 1;
+      &:after {
+        opacity: 1;
+      }
+    }
+  }
+}
+.Work_list {
+  &:hover {
+    .Work_list_description {
+      opacity: 0.7;
+      transition: opacity ease-in 0.4s;
+    }
+  }
+}
